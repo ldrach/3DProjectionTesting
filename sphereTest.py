@@ -1,5 +1,4 @@
-from mpl_toolkits.mplot3d import Axes3D
-import matplotlib.pyplot as plt
+import matinstaplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import FancyArrowPatch
 from mpl_toolkits.mplot3d import proj3d
@@ -94,9 +93,9 @@ def function(central_point=[0., 0., 0.],
     # draw points
     ax.scatter(*list_of_points_TO_lists_of_coordinates(other_points))
     # draw arrows to most distant points:
-    for extreme_point in most_distant_points:
-        ax.add_artist(Arrow3D(start=central_point, end=extreme_point))
-    fig.show()
+    # for extreme_point in most_distant_points:
+    #     ax.add_artist(Arrow3D(start=central_point, end=extreme_point))
+    # fig.show()
 
 
 def find_most_distants(points, center=[0., 0., 0.], tol=1e-5):
@@ -127,7 +126,7 @@ def find_most_distants(points, center=[0., 0., 0.], tol=1e-5):
 
 
 if __name__ == '__main__':
-    function([0, 0, 0], 2 * np.random.rand(50, 3) - 1)
+    # function([0, 0, 0], 2 * np.random.rand(50, 3) - 1)
     # make a list with equally most distant point:
     repeated_max_list = 2 * np.random.rand(10, 3) - 1
     distance, points = find_most_distants(repeated_max_list)
