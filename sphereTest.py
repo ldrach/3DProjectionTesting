@@ -1,10 +1,11 @@
-import matinstaplotlib.pyplot as plt
+import matplotlib.pyplot as plt
+import pandas as pd
 import numpy as np
 from matplotlib.patches import FancyArrowPatch
 from mpl_toolkits.mplot3d import proj3d
 
 
-def WireframeSphere(centre=[0., 0., 0.], radius=1.,
+def WireframeSphere(centre=[0., 0., 0.], radius=2.,
                     n_meridians=20, n_circles_latitude=None):
     if n_circles_latitude is None:
         n_circles_latitude = max(n_meridians / 2, 4)
@@ -125,8 +126,26 @@ def find_most_distants(points, center=[0., 0., 0.], tol=1e-5):
     return max_distance, most_distant_points
 
 
+def animate():
+    x = next(index)
+    x_values.append(x)
+    y = random.randint(0, 5)
+    z = random.randint(3, 8)
+    q = random.randint(0, 10)
+    w = random.randint(0, 10)
+    y_values.append(y)
+    z_values.append(z)
+    q_values.append(q)
+    w_values.append(w)
+
+    ax.plot3D(x_values, y_values, z_values, 'blue', linestyle='--')
+    ax.plot3D(x_values, q_values, z_values, 'red', linestyle='--')
+    ax.plot3D(x_values, w_values, z_values, 'green', linestyle='--')
+
+    time.sleep(3)
+
 if __name__ == '__main__':
-    # function([0, 0, 0], 2 * np.random.rand(50, 3) - 1)
+    function([0, 0, 0], 2 * np.random.rand(50, 3) - 1)
     # make a list with equally most distant point:
     repeated_max_list = 2 * np.random.rand(10, 3) - 1
     distance, points = find_most_distants(repeated_max_list)
