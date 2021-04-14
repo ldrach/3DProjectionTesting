@@ -1,3 +1,5 @@
+# needs further testing. Used to create the wireframe sphere structure
+
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
