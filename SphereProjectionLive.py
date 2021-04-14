@@ -31,9 +31,9 @@ def update(i):
 
 
 # used for testing
-x = plotPoint(1, 2, 3)
-x = plotPoint(5, 6, 9)
-x = plotPoint(1, -4, -4)
+# x = plotPoint(1, 2, 3)
+# x = plotPoint(5, 6, 9)
+# x = plotPoint(1, -4, -4)
 
 
 # Creates the dataframe using the 'x' array and assigns x,y,z columns
